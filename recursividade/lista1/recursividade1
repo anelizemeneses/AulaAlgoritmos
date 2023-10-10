@@ -1,0 +1,29 @@
+"""Analise do Problema:
+        calcular a soma de todos os números naturais menores ou iguais a um número "n"
+    
+    Definição dos dados:
+        Um número inteiro positivo "n" como entrada. E como saida, a soma de todos os números naturais menores ou iguais a "n".
+
+"""
+
+import doctest
+
+
+def soma_naturais(n: int) -> int:
+    # Especificação e Implementação:
+    """
+    Retorna a soma de todos os números naturais menores ou iguais a n
+
+    >>> soma_naturais(5)
+    15
+    >>> soma_naturais(1)
+    1
+    >>> soma_naturais(10)
+    55
+    """
+    # base: se n for igual a 1, retorna 1
+    if n == 1:
+        return 1
+    # recursivo: somar n com a soma dos números naturais menores ou iguais a n-1
+    else:
+        return n + soma_naturais(n - 1)
